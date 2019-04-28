@@ -1,0 +1,77 @@
+\usepackage{fontspec}
+
+
+
+\mode<presentation>
+
+% Specify fonts.
+\usefonttheme[onlymath]{serif}
+\setsansfont{Times New Roman}
+\setbeamerfont{title}{family=\fontspec{Impact}, size = \Huge}
+\setbeamerfont{frametitle}{family=\fontspec{Impact}, size=\LARGE}
+\newcommand{\titleother}{\fontspec{Times New Roman}}
+
+%Clear navigation buttons.
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%Use the background vector I drew
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{ppt2003.pdf}}
+
+%frame title
+\setbeamercolor{frametitle}{fg=blue!70!black!70!white}
+\setbeamertemplate{frametitle}
+{
+	\vspace*{.40in}\hspace*{.40in}\vbox{\insertframetitle}
+}
+
+%headline
+\setbeamertemplate{headline}[default]
+
+%footline
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \setbeamercolor{postit}{fg=white,bg=black}
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333335\paperwidth,ht=2.25ex,dp=1ex,left]{postit}%
+    \insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333335\paperwidth,ht=2.25ex,dp=1ex,center]{postit}%
+    \insertshortdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333335\paperwidth,ht=2.25ex,dp=1ex,right]{postit}%
+	Page \insertframenumber{} of \inserttotalframenumber \hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+%itemization
+\setbeamertemplate{items}[square]
+
+
+
+\mode<all>
+
+%title page; we change ordering
+\setbeamertemplate{title page}{
+
+  \setbeamercolor{title}{fg=blue!70!black!80!white}
+  \setbeamerfont{titleafter}{family = \titleother, size = \LARGE} %use pre-specified font
+  \setbeamercolor{titleafter}{fg=black}
+
+  \vspace{-.4in}
+  \begin{minipage}{\linewidth}
+  \begin{center}
+    \usebeamerfont{title}\usebeamercolor[fg]{title}
+    \vspace{.4in}
+    \inserttitle\par
+    \vspace{.4in}
+    \usebeamerfont{titleafter}\usebeamercolor[fg]{titleafter}
+    \insertauthor\par
+    \vspace{.4in}
+    \inserttitlegraphic\par
+    \vspace{.4in}
+    \insertdate
+  \end{center}
+  \end{minipage}
+}
