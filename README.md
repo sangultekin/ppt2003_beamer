@@ -1,4 +1,3 @@
-# ppt2003_beamer
 A PowerPoint 2003 Style Beamer Template
 =======================================
 
